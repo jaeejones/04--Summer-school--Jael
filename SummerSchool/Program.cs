@@ -24,8 +24,8 @@ namespace SummerSchool
             {
 
                 //print out the menu
-                int choice = Convert.ToInt32(Console.ReadLine());
-                if (choice == 1)
+                int menuchoice = Convert.ToInt32(Console.ReadLine());
+                if (menuchoice == 1)
 
 
                 {
@@ -33,35 +33,63 @@ namespace SummerSchool
                 }
             }
         }
-      
-               /* else
-                {
-                    Console.WriteLine("You can do it, Try Again! Press enter to try again!");
-                    Console.ReadKey();
-                }*/
 
-                static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
+        /* else
+         {
+             Console.WriteLine("You can do it, Try Again! Press enter to try again!");
+             Console.ReadKey();
+         }*/
 
+        static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
 
+        {
+            string[15] students = {"Angelina Thornton", "Pam Barnett", "Carol Gomez", "Marty Marshall", "Alison Gomez", "Kyle Lawson", "Jean Gray","Scott Summers","Hank McCoy","Mo JoJo","Bloosom Puff","Bubbles Puff","Buttercup Puff","Barney Rub","Fred Flint",};
+                
+        }
+         
 
-                /*while (true)
-                {
-                    //print out the menu
-                    int choice = Convert.ToInt32(Console.ReadLine());
-                    if (choice == 1)
+       
+        /*while (true)
+        {
+            //print out the menu
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
 
-                    {
-                        EnrollStudent();
-                    }
-                }
-            }
-
-             static void EnrollStudent()
             {
-                Students[1] = "Bob";*/
+                EnrollStudent();
             }
         }
+    }
+
+     static void EnrollStudent()
+    {
+        Students[1] = "Bob";*/
+    }
+}
     }
 }
 
 
+/*"Angelina Thornton(£200)";
+            Students[2] = "Pam Barnett(£200";
+            Students[2] = "Carol Gomez(£190)";
+            Students[2] = "Marty Marshall(£180)";
+            Students[2] = "";
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]
+                 Students[2]*/
+/* 1. Angelina Thornton(£200)
+2. Pam Barnett(£200)
+3. Carol Gomez(£190)
+4. Marty Marshall(£180)
+5. Gordon Griffith(£180)
+6. Alison Gomez(£190)
+7. Kyle Lawson(£200)
+*/
