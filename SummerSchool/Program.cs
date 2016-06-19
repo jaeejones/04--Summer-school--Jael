@@ -15,8 +15,8 @@ namespace SummerSchool
         {
             string student = Console.ReadLine();
             Console.WriteLine("2016-2017 Student Enrollment for Hogwarts Academy");
-            Console.WriteLine("Student to be enrolled");
-            Console.WriteLine("Students to be unenrolled");
+            Console.WriteLine("Student enrollment");
+            Console.WriteLine("Student unenrollment");
             Console.WriteLine("Roster of Enrolled students");
             Console.WriteLine("Exit Menu");
 
@@ -30,9 +30,9 @@ namespace SummerSchool
 
                 {
                     EnrollStudent(); //initiate the method to enroll students 
-                    Console.WriteLine( "Enter the name of the student you wish to enroll.");
+                    Console.WriteLine("Enter the name of the student you wish to enroll.");
 
-                    
+
                 }
             }
         }
@@ -46,38 +46,53 @@ namespace SummerSchool
         static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
 
         {
-            string[15] enrolledstudents = { "Angelina Thornton", "Pam Barnett", "Carol Gomez", "Marty Marshall", "Alison Gomez", "Kyle Lawson", "Jean Gray", "Scott Summers", "Hank McCoy", "Mo JoJo", "Bloosom Puff", "Bubbles Puff", "Buttercup Puff", "Barney Rub", "Fred Flint", };
+            string[] enrolledstudents = new string[15];
+            enrolledstudents = { "Angelina Thornton", "Pam Barnett", "Carol Gomez", "Marty Marshall", "Alison Gomez", "Kyle Lawson", "Jean Gray", "Scott Summers", "Hank McCoy", "Mo JoJo", "Bloosom Puff", "Bubbles Puff", "Buttercup Puff", "Barney Rub", "Fred Flint", };
 
+            /*static void Main(string[] args) //I am confused on how to use the string/loop method to enroll students. 
+    {
+       string[] enrolledstudents = new string[15];
+       Console.WriteLine("Choose student enrollment to add a student.");
+       for (int i = 0; i < 15; i++)
+       {
+           Console.WriteLine("Enter the name of the student.");
+           myArray[i] = Console.ReadLine();
+       }
+       Console.WriteLine("Student had been enrolled");
+       for (int i = 0; i < 5; i++)
+       {
+           Console.WriteLine(myArray[i]);
+       }*/
             /* PrintArray(students);  where would I add this*/
-        }
-
-        // two loops will need to be created to add enroll/unenroll 2. To return the main menu without a break in program. 
-       /* static void PrintArray(string[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
-        }
-
-        static int IndexOf(string[] array, string element)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] == element)
-                {
-                    return i;
-                }
-            }
-            return -1; */
 
 
+// two loops will need to be created to add enroll/unenroll 2. To return the main menu without a break in program. 
+/* static void PrintArray(string[] array)
+ {
+     for (int i = 0; i < array.Length; i++)
+     {
+         Console.WriteLine(array[i]);
+     }
+ }
+
+ static int IndexOf(string[] array, string element)
+ {
+     for (int i = 0; i < array.Length; i++)
+     {
+         if (array[i] == element)
+         {
+             return i;
+         }
+     }
+     return -1; */
 
 
-        /* static void EnrollStudent()
-        {
-            Students[1] = "Bob";*/
-       
+
+
+/* static void EnrollStudent()
+{
+    Students[1] = "Bob";*/
+
 
 /*"Angelina Thornton(£200)";
             Students[2] = "Pam Barnett(£200";
@@ -102,17 +117,35 @@ namespace SummerSchool
 6. Alison Gomez(£190)
 7. Kyle Lawson(£200)
 */
- /*static void Main(string[] args)
+/*static void Main(string[] args) //I am confused on how to use the string/loop method to enroll students. 
+{
+   string[] enrolledstudents = new string[15];
+   Console.WriteLine("Choose student enrollment to add a student.");
+   for (int i = 0; i < 15; i++)
+   {
+       Console.WriteLine("Enter the name of the student.");
+       myArray[i] = Console.ReadLine();
+   }
+   Console.WriteLine("Student had been enrolled");
+   for (int i = 0; i < 5; i++)
+   {
+       Console.WriteLine(myArray[i]);
+   }*/
+/*static void Main(string[] args) // I am confused on how to use a string and loop to remove a student. 
 {
     string[] enrolledstudents = new string[15];
-    Console.WriteLine("Let's grab 5 strings!");
+    Console.WriteLine("Choose student unenrollment to remove a student.");
     for (int i = 0; i < 15; i++)
     {
-        Console.WriteLine("Enter a sentence then press enter.");
+        Console.WriteLine("Enter the name of the student.");
         myArray[i] = Console.ReadLine();
     }
-    Console.WriteLine("Great! Here's what I read:");
+    Console.WriteLine("Student had been unerolled");
     for (int i = 0; i < 5; i++)
     {
         Console.WriteLine(myArray[i]);
     }*/
+
+// what method would I use to remove the uneroll student option option once the roster had been filled. 
+// What method would I use 
+//What method would I use to save the name of the student once the student has been enrolled, have we even learned this?
