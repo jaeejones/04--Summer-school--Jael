@@ -64,12 +64,11 @@ namespace SummerSchool
 
            int spot = GetNextFreeSpot(); // put the students in the next free spot.
 
-
             if (spot >= 0)
             {
                 Students[spot] = student;
 
-                Console.WriteLine("\n {0} has been added! \n {0} will owe £200.\n", student);
+                Console.WriteLine("\n {0} Student enrolled \n {0} £200 owed in class fees.\n", student);
                 Console.WriteLine("Press Enter to continue.");
                 Console.ReadKey();
             }
@@ -84,18 +83,21 @@ namespace SummerSchool
         }
         static void Unenrollstudent()
         {
+            Printlist();
+
+            Console.WriteLine("Choose the numeber you want to remove a student.");
+
 
         }
 
         static void Printlist()
         {
-
             for (int i = 0; i < Students.Length; i++)
 
                 if (Students[i] != null)
 
                 {
-                    Console.WriteLine("Fees owed £200 ");
+                    Console.WriteLine(i+1 +  "." + Students[i]);
                 }
         }
 
