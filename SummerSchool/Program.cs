@@ -15,31 +15,33 @@ namespace SummerSchool
         {
             string student = Console.ReadLine();
             Console.WriteLine("2016-2017 Student Enrollment for Hogwarts Academy");
-            Console.WriteLine("Student enrollment");
-            Console.WriteLine("Student unenrollment");
-            Console.WriteLine("Roster of Enrolled students");
-            Console.WriteLine("Exit Menu");
+            Console.WriteLine("1. Student enrollment");
+            Console.WriteLine("2. Student unenrollment");
+            Console.WriteLine("3. Roster of Enrolled students");
+            Console.WriteLine("4. Exit Menu");
 
             while (true)
             {
 
                 //print out the menu
-                int menuchoice = Convert.ToInt32(Console.ReadLine());
-                if (menuchoice == 1)
-
+                int menuchoice = Convert.ToInt32(Console.ReadLine()); // Why is the Convert.ToInt32 used?
+                if (menuchoice == "1")
 
                 {
-                    EnrollStudent(); //initiate the method to enroll students 
+                   // EnrollStudent(); //initiate the method to enroll students 
                     Console.WriteLine("Enter the name of the student you wish to enroll.");
-
-
+                }
+                else if (menuchoice == "2")
+                {
+                    Console.WriteLine("Chose {name} to unenroll a student, then press enter.");
+                    Console.ReadKey(); // I have kept this here as a reminder of what I need to do if the person does not choose to enroll. I 
                 }
             }
         }
 
         /* else
          {
-             Console.WriteLine("Chose {0} to unenroll a student, then press enter.");
+             Console.WriteLine("Chose {name} to unenroll a student, then press enter.");
              Console.ReadKey(); // I have kept this here as a reminder of what I need to do if the person does not choose to enroll. I 
          }*/
 
@@ -47,7 +49,7 @@ namespace SummerSchool
 
         {
             string[] enrolledstudents = new string[15];
-            enrolledstudents = { "Angelina Thornton", "Pam Barnett", "Carol Gomez", "Marty Marshall", "Alison Gomez", "Kyle Lawson", "Jean Gray", "Scott Summers", "Hank McCoy", "Mo JoJo", "Bloosom Puff", "Bubbles Puff", "Buttercup Puff", "Barney Rub", "Fred Flint", };
+            enrolledstudents = {"Angelina Thornton", "Pam Barnett", "Carol Gomez", "Marty Marshall", "Alison Gomez", "Kyle Lawson", "Jean Gray", "Scott Summers", "Hank McCoy", "Mo JoJo", "Bloosom Puff", "Bubbles Puff", "Buttercup Puff", "Barney Rub", "Fred Flint",};
 
             /*static void Main(string[] args) //I am confused on how to use the string/loop method to enroll students. 
     {
@@ -127,7 +129,7 @@ namespace SummerSchool
        myArray[i] = Console.ReadLine();
    }
    Console.WriteLine("Student had been enrolled");
-   for (int i = 0; i < 5; i++)
+   for (int i = 0; i < 15; i++)
    {
        Console.WriteLine(myArray[i]);
    }*/
@@ -141,11 +143,12 @@ namespace SummerSchool
         myArray[i] = Console.ReadLine();
     }
     Console.WriteLine("Student had been unerolled");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 15; i++)
     {
         Console.WriteLine(myArray[i]);
     }*/
-
+    // when i is equal to 15 (enrollment is full) is need choice 1 unenroll student to disapear because class full, I am not
+    // certain on how to display this. 
 // what method would I use to remove the uneroll student option option once the roster had been filled. 
 // What method would I use 
 //What method would I use to save the name of the student once the student has been enrolled, have we even learned this?
