@@ -13,7 +13,7 @@ namespace SummerSchool
         static void Main(string[] args)
 
         {
-            string student = Console.ReadLine();
+            string Student = Console.ReadLine();
             Console.WriteLine("2016-2017 Student Enrollment for Hogwarts Academy");
             Console.WriteLine("1. Student enrollment");
             Console.WriteLine("2. Student unenrollment");
@@ -25,18 +25,36 @@ namespace SummerSchool
 
                 //print out the menu
                 int menuchoice = Convert.ToInt32(Console.ReadLine()); // Why is the Convert.ToInt32 used?
-                if (menuchoice == "1")
+                if (choice == 1)
 
                 {
-                   // EnrollStudent(); //initiate the method to enroll students 
+                    EnrollStudent(); //initiate the method to enroll students 
                     Console.WriteLine("Enter the name of the student you wish to enroll.");
                 }
-                else if (menuchoice == "2")
+                else if (choice == 2)
                 {
-                    Console.WriteLine("Chose {name} to unenroll a student, then press enter.");
-                    Console.ReadKey(); // I have kept this here as a reminder of what I need to do if the person does not choose to enroll. I 
+                    Unenrollstudent();
+                    //Console.WriteLine("Choose 2 to unenroll a student, then press enter.");
+                    //Console.ReadKey(); I have kept this here as a reminder of what I need to do if the person does not choose to enroll. I 
                 }
-            }
+                else if (choice == 3)
+                {
+                    PrintStudent();
+                }
+
+                else if (choice == 4)
+                {
+                    //quit
+                    break;
+                }
+               else 
+                {
+                    //Unknown choice!
+                    Console.WriteLine("Please enter a number 1-4");
+
+                }
+             }
+            Console.ReadKey();
         }
 
         /* else
@@ -45,13 +63,16 @@ namespace SummerSchool
              Console.ReadKey(); // I have kept this here as a reminder of what I need to do if the person does not choose to enroll. I 
          }*/
 
-        static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
+         static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
+      {
+        Console.WriteLine.("Enter the name of student to enroll.")
+        string[] student = Console.ReadLine();
 
-        {
-            string[] enrolledstudents = new string[15];
-            enrolledstudents = {"Angelina Thornton", "Pam Barnett", "Carol Gomez", "Marty Marshall", "Alison Gomez", "Kyle Lawson", "Jean Gray", "Scott Summers", "Hank McCoy", "Mo JoJo", "Bloosom Puff", "Bubbles Puff", "Buttercup Puff", "Barney Rub", "Fred Flint",};
+         // put the students in the next free spot.
 
-            /*static void Main(string[] args) //I am confused on how to use the string/loop method to enroll students. 
+
+
+            /*static int //I am confused on how to use the string/loop method to enroll students. 
     {
        string[] enrolledstudents = new string[15];
        Console.WriteLine("Choose student enrollment to add a student.");
@@ -65,7 +86,11 @@ namespace SummerSchool
        {
            Console.WriteLine(myArray[i]);
        }*/
-            /* PrintArray(students);  where would I add this*/
+            /* PrintArray(students);  where would I add this
+            
+    private static void PrintStudents ()
+    {
+    }*/
 
 
 // two loops will need to be created to add enroll/unenroll 2. To return the main menu without a break in program. 
@@ -96,28 +121,6 @@ namespace SummerSchool
     Students[1] = "Bob";*/
 
 
-/*"Angelina Thornton(£200)";
-            Students[2] = "Pam Barnett(£200";
-            Students[2] = "Carol Gomez(£190)";
-            Students[2] = "Marty Marshall(£180)";
-            Students[2] = "";
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]
-                 Students[2]*/
-/* 1. Angelina Thornton(£200)
-2. Pam Barnett(£200)
-3. Carol Gomez(£190)
-4. Marty Marshall(£180)
-5. Gordon Griffith(£180)
-6. Alison Gomez(£190)
-7. Kyle Lawson(£200)
 */
 /*static void Main(string[] args) //I am confused on how to use the string/loop method to enroll students. 
 {
@@ -147,8 +150,21 @@ namespace SummerSchool
     {
         Console.WriteLine(myArray[i]);
     }*/
-    // when i is equal to 15 (enrollment is full) is need choice 1 unenroll student to disapear because class full, I am not
-    // certain on how to display this. 
+// when i is equal to 15 (enrollment is full) is need choice 1 unenroll student to disapear because class full, I am not
+// certain on how to display this. 
 // what method would I use to remove the uneroll student option option once the roster had been filled. 
 // What method would I use 
 //What method would I use to save the name of the student once the student has been enrolled, have we even learned this?
+
+
+/* Notes from Today
+
+static 
+
+//Finding the next free spot
+
+for (int i = 0; 1 < Students.Lenght; i++)
+
+
+/* int spot = GetNext
+                         
