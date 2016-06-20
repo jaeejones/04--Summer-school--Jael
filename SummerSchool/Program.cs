@@ -25,18 +25,18 @@ namespace SummerSchool
 
                 {
                     EnrollStudent(); //initiate the method to enroll students 
-                    Console.WriteLine("Enter the name of the student you wish to enroll.");
-                    Console.WriteLine("Press enter to continue.");
+                    //Console.WriteLine("Enter the name of the student you wish to enroll.");
+                    //Console.WriteLine("Press enter to continue.");
                 }
                 else if (choice == 2)
                 {
-                    //Unenrollstudent();
+                    Unenrollstudent();
                     //Console.WriteLine("Choose 2 to unenroll a student, then press enter.");
                     //Console.WriteLine("Press enter to continue.");
                 }
                 else if (choice == 3)
                 {
-                    //PrintStudent();
+                    Printlist();
                 }
 
                 else if (choice == 4)
@@ -79,8 +79,22 @@ namespace SummerSchool
                 //method to find next available spot in students
             }
         }
+        static void Unenrollstudent()
+        {
 
-        static int GetNextFreeSpot()
+        }
+
+    static void Printlist()
+
+        for (int i = 0; i<Students.length; i++)
+        
+            if (Students[i] != null)
+                
+                {
+                    Console.WriteLine("Fees owed £200 ");
+                }
+
+    static int GetNextFreeSpot()
 
         {
             for (int i = 0; i < Students.Length; i++)
@@ -92,7 +106,7 @@ namespace SummerSchool
                 }
             }
 
-            // if we get through the whole 
+            // if we get through menu
             return -1;
 
         }
@@ -104,7 +118,17 @@ namespace SummerSchool
 
 
 
-            /*static int //I am confused on how to use the string/loop method to enroll students. 
+
+
+
+
+
+
+
+
+
+
+/*static int //I am confused on how to use the string/loop method to enroll students. 
     {
        string[] enrolledstudents = new string[15];
        Console.WriteLine("Choose student enrollment to add a student.");
@@ -118,11 +142,11 @@ namespace SummerSchool
        {
            Console.WriteLine(myArray[i]);
        }*/
-            /* PrintArray(students);  where would I add this
-            
-    private static void PrintStudents ()
-    {
-    }*/
+/* PrintArray(students);  where would I add this
+
+private static void PrintStudents ()
+{
+}*/
 
 
 // two loops will need to be created to add enroll/unenroll 2. To return the main menu without a break in program. 
@@ -189,4 +213,3 @@ namespace SummerSchool
 //What method would I use to save the name of the student once the student has been enrolled, have we even learned this?
 
 
-   
