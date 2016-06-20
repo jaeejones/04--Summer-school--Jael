@@ -62,39 +62,52 @@ namespace SummerSchool
             Console.WriteLine("Enter the name of student to enroll.");
             string student = Console.ReadLine();
 
-
-            // put the students in the next free spot.
-            int spot = GetNextFreeSpot();
+           int spot = GetNextFreeSpot(); // put the students in the next free spot.
 
 
-            if (spot == -1)
-            {
-                Console.WriteLine("Enrollment is Full.");
-                Console.WriteLine("Press enter to return to main menu.");
-                Console.ReadKey();
-            }
-            else
+            if (spot >= 0)
             {
                 Students[spot] = student;
-                //method to find next available spot in students
+
+                Console.WriteLine("\n {0} has been added! \n {0} will owe £200.\n", student);
+                Console.WriteLine("Press Enter to continue.");
+                Console.ReadKey();
             }
+             
+            else
+            {
+                 Console.WriteLine("Enrollment is Full.");
+                 Console.WriteLine("Press enter to return to main menu.");
+                 Console.ReadKey();
+             }
+             
         }
         static void Unenrollstudent()
         {
 
         }
 
-    static void Printlist()
+        static void Printlist()
+        {
 
-        for (int i = 0; i<Students.length; i++)
-        
-            if (Students[i] != null)
-                
+            for (int i = 0; i < Students.Length; i++)
+
+                if (Students[i] != null)
+
                 {
                     Console.WriteLine("Fees owed £200 ");
                 }
+        }
 
-    static int GetNextFreeSpot()
+        static void ExitMenu()
+        {
+            Console.WriteLine("Press enter to exit the system");
+            Console.ReadKey();
+
+        }
+
+
+        static int GetNextFreeSpot()
 
         {
             for (int i = 0; i < Students.Length; i++)
