@@ -13,8 +13,7 @@ namespace SummerSchool
         static void Main(string[] args)
 
         {
-            string Student = Console.ReadLine();
-            Console.WriteLine("2016-2017 Student Enrollment for Hogwarts Academy");
+            Console.WriteLine("2016 Summer Student Enrollment for Hogwarts Academy");
             Console.WriteLine("1. Student enrollment");
             Console.WriteLine("2. Student unenrollment");
             Console.WriteLine("3. Roster of Enrolled students");
@@ -22,7 +21,11 @@ namespace SummerSchool
 
             while (true)
             {
-
+                Console.WriteLine("2016 Summer Student Enrollment for Hogwarts Academy");
+                Console.WriteLine("1. Student enrollment");
+                Console.WriteLine("2. Student unenrollment");
+                Console.WriteLine("3. Roster of Enrolled students");
+                Console.WriteLine("4. Exit Menu");
                 //print out the menu
                 int menuchoice = Convert.ToInt32(Console.ReadLine()); // Why is the Convert.ToInt32 used?
                 if (choice == 1)
@@ -57,18 +60,32 @@ namespace SummerSchool
             Console.ReadKey();
         }
 
-        /* else
-         {
-             Console.WriteLine("Chose {name} to unenroll a student, then press enter.");
-             Console.ReadKey(); // I have kept this here as a reminder of what I need to do if the person does not choose to enroll. I 
-         }*/
+       
 
-         static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
-      {
-        Console.WriteLine.("Enter the name of student to enroll.")
-        string[] student = Console.ReadLine();
+        static void EnrollStudent() //Jael Here is the method that you need to create to use to enroll the students
+        {
+            Console.WriteLine("Enter the name of student to enroll.");
+            string[] student = Console.ReadLine();
 
-         // put the students in the next free spot.
+            // put the students in the next free spot.
+            int spot = GetNextFreeSpot();
+
+            Students[spot] = student;
+            if (spot == -1)
+            {
+                Console.WriteLine("Enrollment is Full.");
+                Console.WriteLine("Press enter to return to main menu.");
+                Console.ReadKey();
+            }
+            else
+            {
+                Students[spot] = stu;
+                //method to find next available spot in students
+            }
+
+        }
+    }
+
 
 
 
