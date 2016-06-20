@@ -82,11 +82,15 @@ namespace SummerSchool
              
         }
         static void Unenrollstudent()
+
         {
             Printlist();
 
             Console.WriteLine("Choose the numeber you want to remove a student.");
+            int choice = Convert.ToInt32(Console.ReadLine());
 
+            Students[choice -1] = null;
+            Console.WriteLine("Student had been unenrolled");
 
         }
 
