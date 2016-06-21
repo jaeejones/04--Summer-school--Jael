@@ -41,8 +41,8 @@ namespace SummerSchool
                 }
                else if (choice == 4)
                 {
-                    //quit
-                    break;
+                     ExitMenu();
+                 
                 }
                 else
                 {
