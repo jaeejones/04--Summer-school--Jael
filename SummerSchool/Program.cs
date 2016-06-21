@@ -20,7 +20,8 @@ namespace SummerSchool
                 Console.WriteLine("3. Roster of Enrolled students");
                 Console.WriteLine("4. Exit Menu");
                 //print out the menu
-                int choice = Convert.ToInt32(Console.ReadLine()); // Why is the Convert.ToInt32 used?
+
+                int choice = Convert.ToInt32(Console.ReadLine());
                 if (choice == 1)
 
                 {
@@ -38,11 +39,7 @@ namespace SummerSchool
                 {
                     Printlist();
                 }
-                else if (choice == 4)
-                {
-                    SpecialClass();
-                }
-                else if (choice == 5)
+               else if (choice == 4)
                 {
                     //quit
                     break;
@@ -65,7 +62,7 @@ namespace SummerSchool
             Console.WriteLine("Enter the name of student to enroll.");
             string student = Console.ReadLine();
 
-           int spot = GetNextFreeSpot(); // put the students in the next free spot.
+            int spot = GetNextFreeSpot(); // put the students in the next free spot.
 
             if (spot >= 0)
             {
@@ -75,73 +72,23 @@ namespace SummerSchool
                 Console.WriteLine("Press Enter to continue.");
                 Console.ReadKey();
             }
-             
-            else
-            {
-                 Console.WriteLine("Enrollment is Full.");
-                 Console.WriteLine("Press enter to return to main menu.");
-                 Console.ReadKey();
-             }
-             
-        }
-        static void Unenrollstudent()
 
-        {
-            Printlist();
-
-            Console.WriteLine("Choose the numeber you want to remove a student.");
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            Students[choice -1] = null;
-            Console.WriteLine("Student had been unenrolled");
-
-        }
-
-        static void Printlist()
-        {
-            for (int i = 0; i < Students.Length; i++)
-
-                if (Students[i] != null)
-
-                {
-                    Console.WriteLine(i+1 +  "." + Students[i]);
-                }
-        }
-
-        static void SpecialClass()
-        {
-            double cost = 200;
-            Console.WriteLine("Enter student's name, press enter.");
-            string student = Console.ReadLine();
-            int spot = GetNextFreeSpot();
-            if (student.ToLower() == "malfoy")
+            else if (student.ToLower() == "malfoy")
             {
                 Console.WriteLine("Student cannot be enrolled!");
             }
             else if (student.ToLower() == "potter")
             {
-                students[spot] = student;
-                studentsCost[spot] = cost / 2;
-                Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + cost / 2);
+                Console.WriteLine("Student enrollment complete. Free is discounted at half off.Fee £100");
             }
             else if (student.ToLower() == "longbottom")
             {
-                if (CountStudent() < 10)
+                if (spot < 10)
                 {
-                    students[spot] = student;
-                    studentsCost[spot] = 0 % cost;
-                    Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + 0 % cost);
-                }
-                else
-                {
-                    students[spot] = student;
-                    studentsCost[spot] = cost;
-                    Console.WriteLine(students[spot] + " Enrollment compete.Fee owed £" + cost);
 
+                    Console.WriteLine("Enrollemnt complete, no fee's owed");
                 }
-
             }
-
             else if (student.ToLower() == "tom")
             {
                 Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
@@ -156,23 +103,36 @@ namespace SummerSchool
             }
             else
             {
-                students[spot] = student;
-                studentsCost[spot] = cost;
-                Console.WriteLine(students[spot] + " Enrollment complete, fee owed £" + cost);
+                Console.WriteLine("Enrollment is Full.");
+                Console.WriteLine("Press enter to return to main menu.");
+                Console.ReadKey();
             }
         }
+        static void Unenrollstudent()
 
+        {
+            Printlist();
 
+            Console.WriteLine("Choose the numeber you want to remove a student.");
+            int choice = Convert.ToInt32(Console.ReadLine());
 
+            Students[choice - 1] = null;
+            Console.WriteLine("Student had been unenrolled");
 
+        }
 
+        static void Printlist()
+        {
+            for (int i = 0; i < Students.Length; i++)
 
+                if (Students[i] != null)
 
+                {
+                    Console.WriteLine(i + 1 + "." + Students[i]);
+                }
+        }
 
-
-
-
-        static void ExitMenu()
+      static void ExitMenu()
         {
             Console.WriteLine("Press enter to exit the system");
             Console.ReadKey();
@@ -204,59 +164,6 @@ namespace SummerSchool
 
 
 
-static void SpecialClass()
-{
-    double cost = 200;
-    Console.WriteLine("Enter student's name, press enter.");
-    string student = Console.ReadLine();
-    int spot = GetNextFreeSpot();
-    if (student.ToLower() == "malfoy")
-    {
-        Console.WriteLine("Student cannot be enrolled!");
-    }
-    else if (student.ToLower() == "potter")
-    {
-        students[spot] = student;
-        studentsCost[spot] = cost / 2;
-        Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + cost / 2);
-    }
-    else if (student.ToLower() == "longbottom")
-    {
-        if (CountStudent() < 10)
-        {
-            students[spot] = student;
-            studentsCost[spot] = 0 % cost;
-            Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + 0 % cost);
-        }
-        else
-        {
-            students[spot] = student;
-            studentsCost[spot] = cost;
-            Console.WriteLine(students[spot] + " Enrollment compete.Fee owed £" + cost);
-
-        }
-
-    }
-
-    else if (student.ToLower() == "tom")
-    {
-        Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
-    }
-    else if (student.ToLower() == "riddle")
-    {
-        Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
-    }
-    else if (student.ToLower() == "voldemort")
-    {
-        Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
-    }
-    else
-    {
-        students[spot] = student;
-        studentsCost[spot] = cost;
-        Console.WriteLine(students[spot] + " Enrollment complete, fee owed £" + cost);
-    }
-}
 
 
 
