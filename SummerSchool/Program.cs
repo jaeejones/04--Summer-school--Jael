@@ -38,8 +38,11 @@ namespace SummerSchool
                 {
                     Printlist();
                 }
-
                 else if (choice == 4)
+                {
+                    SpecialClass();
+                }
+                else if (choice == 5)
                 {
                     //quit
                     break;
@@ -105,6 +108,70 @@ namespace SummerSchool
                 }
         }
 
+        static void SpecialClass()
+        {
+            double cost = 200;
+            Console.WriteLine("Enter student's name, press enter.");
+            string student = Console.ReadLine();
+            int spot = GetNextFreeSpot();
+            if (student.ToLower() == "malfoy")
+            {
+                Console.WriteLine("Student cannot be enrolled!");
+            }
+            else if (student.ToLower() == "potter")
+            {
+                students[spot] = student;
+                studentsCost[spot] = cost / 2;
+                Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + cost / 2);
+            }
+            else if (student.ToLower() == "longbottom")
+            {
+                if (CountStudent() < 10)
+                {
+                    students[spot] = student;
+                    studentsCost[spot] = 0 % cost;
+                    Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + 0 % cost);
+                }
+                else
+                {
+                    students[spot] = student;
+                    studentsCost[spot] = cost;
+                    Console.WriteLine(students[spot] + " Enrollment compete.Fee owed £" + cost);
+
+                }
+
+            }
+
+            else if (student.ToLower() == "tom")
+            {
+                Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
+            }
+            else if (student.ToLower() == "riddle")
+            {
+                Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
+            }
+            else if (student.ToLower() == "voldemort")
+            {
+                Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
+            }
+            else
+            {
+                students[spot] = student;
+                studentsCost[spot] = cost;
+                Console.WriteLine(students[spot] + " Enrollment complete, fee owed £" + cost);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
         static void ExitMenu()
         {
             Console.WriteLine("Press enter to exit the system");
@@ -137,98 +204,66 @@ namespace SummerSchool
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*static int //I am confused on how to use the string/loop method to enroll students. 
+static void SpecialClass()
+{
+    double cost = 200;
+    Console.WriteLine("Enter student's name, press enter.");
+    string student = Console.ReadLine();
+    int spot = GetNextFreeSpot();
+    if (student.ToLower() == "malfoy")
     {
-       string[] enrolledstudents = new string[15];
-       Console.WriteLine("Choose student enrollment to add a student.");
-       for (int i = 0; i < 15; i++)
-       {
-           Console.WriteLine("Enter the name of the student.");
-           myArray[i] = Console.ReadLine();
-       }
-       Console.WriteLine("Student had been enrolled");
-       for (int i = 0; i < 5; i++)
-       {
-           Console.WriteLine(myArray[i]);
-       }*/
-/* PrintArray(students);  where would I add this
-
-private static void PrintStudents ()
-{
-}*/
-
-
-// two loops will need to be created to add enroll/unenroll 2. To return the main menu without a break in program. 
-/* static void PrintArray(string[] array)
- {
-     for (int i = 0; i < array.Length; i++)
-     {
-         Console.WriteLine(array[i]);
-     }
- }
-
- static int IndexOf(string[] array, string element)
- {
-     for (int i = 0; i < array.Length; i++)
-     {
-         if (array[i] == element)
-         {
-             return i;
-         }
-     }
-     return -1; */
-
-
-
-
-/* static void EnrollStudent()
-{
-    Students[1] = "Bob";*/
-
-
-
-/*static void Main(string[] args) //I am confused on how to use the string/loop method to enroll students. 
-{
-   string[] enrolledstudents = new string[15];
-   Console.WriteLine("Choose student enrollment to add a student.");
-   for (int i = 0; i < 15; i++)
-   {
-       Console.WriteLine("Enter the name of the student.");
-       myArray[i] = Console.ReadLine();
-   }
-   Console.WriteLine("Student had been enrolled");
-   for (int i = 0; i < 15; i++)
-   {
-       Console.WriteLine(myArray[i]);
-   }*/
-/*static void Main(string[] args) // I am confused on how to use a string and loop to remove a student. 
-{
-    string[] enrolledstudents = new string[15];
-    Console.WriteLine("Choose student unenrollment to remove a student.");
-    for (int i = 0; i < 15; i++)
-    {
-        Console.WriteLine("Enter the name of the student.");
-        myArray[i] = Console.ReadLine();
+        Console.WriteLine("Student cannot be enrolled!");
     }
-    Console.WriteLine("Student had been unerolled");
-    for (int i = 0; i < 15; i++)
+    else if (student.ToLower() == "potter")
     {
-        Console.WriteLine(myArray[i]);
-    }*/
-// when i is equal to 15 (enrollment is full) is need choice 1 unenroll student to disapear because class full, I am not
-// certain on how to display this. 
-// what method would I use to remove the uneroll student option option once the roster had been filled. 
-// What method would I use 
-//What method would I use to save the name of the student once the student has been enrolled, have we even learned this?
+        students[spot] = student;
+        studentsCost[spot] = cost / 2;
+        Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + cost / 2);
+    }
+    else if (student.ToLower() == "longbottom")
+    {
+        if (CountStudent() < 10)
+        {
+            students[spot] = student;
+            studentsCost[spot] = 0 % cost;
+            Console.WriteLine(students[spot] + " Enrollment complete. Fee owed £" + 0 % cost);
+        }
+        else
+        {
+            students[spot] = student;
+            studentsCost[spot] = cost;
+            Console.WriteLine(students[spot] + " Enrollment compete.Fee owed £" + cost);
+
+        }
+
+    }
+
+    else if (student.ToLower() == "tom")
+    {
+        Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
+    }
+    else if (student.ToLower() == "riddle")
+    {
+        Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
+    }
+    else if (student.ToLower() == "voldemort")
+    {
+        Console.WriteLine("RED ALERT!!!HE WHO MUST NOT BE NAMED!!!");
+    }
+    else
+    {
+        students[spot] = student;
+        studentsCost[spot] = cost;
+        Console.WriteLine(students[spot] + " Enrollment complete, fee owed £" + cost);
+    }
+}
+
+
+
+
+
+
+
+
 
 
